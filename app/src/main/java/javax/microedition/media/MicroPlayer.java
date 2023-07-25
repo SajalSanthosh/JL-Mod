@@ -324,7 +324,7 @@ public class MicroPlayer extends BasePlayer implements MediaPlayer.OnCompletionL
 		}
 
 		if (useSoundFont) {
-//			midiPlayer.setLoopCount(count);
+			midiPlayer.setLoopCount(count);
 		} else {
 			player.setLooping(count == -1);
 		}
