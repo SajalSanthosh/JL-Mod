@@ -23,7 +23,7 @@ android {
     }
 
     signingConfigs {
-        emulator {
+       /* emulator {
             def file = rootProject.file("keystore.properties")
             if (file.exists()) file.withInputStream {
                 def keystoreProperties = new Properties()
@@ -33,7 +33,7 @@ android {
                 storeFile rootProject.file(keystoreProperties['storeFile'])
                 storePassword keystoreProperties['storePassword']
             }
-        }
+        }*/
     }
 
     buildTypes {
@@ -58,7 +58,7 @@ android {
         emulator { // variant dimension for create emulator
             buildConfigField 'boolean', 'FULL_EMULATOR', 'true'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.emulator
+           // signingConfig signingConfigs.emulator
             versionNameSuffix System.getenv('VERSION_SUFFIX')
         }
         midlet { // variant dimension for create android port from J2ME app source
