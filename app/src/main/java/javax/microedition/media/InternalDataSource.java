@@ -46,6 +46,11 @@ public class InternalDataSource extends DataSource {
 		super(null);
 
 		String extension = "." + MimeTypeMap.getSingleton().getExtensionFromMimeType(type);
+		Log.d(TAG, "Datasource type: " + type + " ; extension: " + extension);
+		Log.d(TAG, MimeTypeMap.getSingleton().getExtensionFromMimeType("audio/midi"));
+		Log.d(TAG, Log.getStackTraceString(new Exception()));
+
+		
 		this.mediaFile = File.createTempFile("media", extension, ContextHolder.getCacheDir());
 		this.type = type;
 
